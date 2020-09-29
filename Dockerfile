@@ -22,4 +22,4 @@ RUN apt-get -y purge wget build-essential manpages-dev unzip unrar
 EXPOSE 23/tcp
 EXPOSE 22/tcp
 ENTRYPOINT mis server
-//ENTRYPOINT while true;do sleep 50000 ; done
+#ENTRYPOINT while true;do sleep 50000 ; done
