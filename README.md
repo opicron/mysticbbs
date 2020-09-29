@@ -7,7 +7,11 @@ Docker basic install of the mystic BBS software
 - changed cryptlib download link
 - changed ENTRYPOINT
 
-TODO:
+# Mystic BBS systemd Start/Stop Scripts
+
+https://vswitchzero.com/mystic-systemd/
+
+# TODO:
 - tba
 
 
