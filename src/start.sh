@@ -12,7 +12,7 @@
 # Some variables. Older versions of mystic used -d instead of daemon as an option, so change
 # accordingly. Also ensure your mystic path is set correctly.
 MIS_PATH=/mystic
-MIS_OPTS=daemon
+MIS_OPTS=server
 MIS_PID=$(ps auxwww | grep "mis $MIS_OPTS" | grep -v grep | awk '{print $2}')
 
 echo "Attempting to start the Mystic Internet Service (mis).."
