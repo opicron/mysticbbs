@@ -25,5 +25,5 @@ RUN ./upgrade
 RUN apt-get -y purge wget build-essential manpages-dev unzip unrar
 EXPOSE 23/tcp
 EXPOSE 22/tcp
-ENTRYPOINT ["/mystic/boot.sh"]
-#ENTRYPOINT while true;do sleep 50000 ; done
+#ENTRYPOINT ["/mystic/boot.sh"]
+ENTRYPOINT while true;do sleep 50000 ; done
