@@ -11,9 +11,9 @@ RUN unrar-nonfree x mys112a39_l64.rar
 ADD ./mystic /mystic
 RUN cp /root/upgrade /mystic/
 ADD ./src /mystic
-RUN	chmod +x /mystic/boot.sh
-RUN	chmod +x /mystic/start.sh
-RUN	chmod +x /mystic/stop.sh
+RUN chmod +x /mystic/boot.sh
+RUN chmod +x /mystic/start.sh
+RUN chmod +x /mystic/stop.sh
 RUN rm -fr /root/*
 RUN wget http://www.mysticbbs.com/downloads/cl3431.zip
 RUN unzip -a cl3431.zip
