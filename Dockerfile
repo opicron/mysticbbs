@@ -28,6 +28,7 @@ EXPOSE 22/tcp
 #CMD ["/mystic/mis","server"]
 #ENTRYPOINT ["/mystic/boot.sh"]
 #ENTRYPOINT ["/bin/bash", "-c", "/mystic/boot.sh"]
+ENTRYPOINT while true;do sleep 50000 ; done
 CMD ["/mystic/boot.sh"]
 #works
-#ENTRYPOINT while true;do sleep 50000 ; done
+
