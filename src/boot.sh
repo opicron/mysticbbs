@@ -7,7 +7,7 @@ if [ "$1" = 'mystic' ]; then
     #if [ -z "$(ls -A "$PGDATA")" ]; then
     #    gosu postgres initdb
     #fi
-    exec /mystic/mis daemon
+    /mystic/mis daemon
     #/mystic/start.sh
     
     while true
