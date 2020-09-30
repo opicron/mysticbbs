@@ -14,7 +14,7 @@ Synology specific Docker install of the mystic BBS software
 Used the following source for the start/stop scripts
 https://vswitchzero.com/mystic-systemd/
 
-# TODO:
+# todo:
 - tba
 
 
