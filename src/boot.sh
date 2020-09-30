@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # Mystic BBS docker boot script
 #exec /mystic/start.sh
-su - root -c 'cd /mystic && /mystic/mis daemon'
+exec su - root -c 'cd /mystic && /mystic/mis daemon'
