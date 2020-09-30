@@ -1,15 +1,17 @@
 # mysticbbs
 
-Docker basic install of the mystic BBS software
+Synology specific Docker install of the mystic BBS software
 
 29/09/2020:
 - added EXPOSE ports for Synology docker
 - changed cryptlib download link
 - changed ENTRYPOINT
-- tail log file instead of sleep
+- changed main window to tail log instead of sleep
+- added start/stop scripts
 
-# Mystic BBS systemd Start/Stop Scripts
+# start/stop scripts
 
+Used the following source for the start/stop scripts
 https://vswitchzero.com/mystic-systemd/
 
 # TODO:
