@@ -29,7 +29,9 @@ EXPOSE 22/tcp
 #ENTRYPOINT ["/mystic/boot.sh"]
 #keeps restarting
 #ENTRYPOINT ["/bin/bash", "-c", "/mystic/boot.sh"]
-ENTRYPOINT while true;do sleep 50000;done
-CMD ["/bin/bash", "-c", "/mystic/boot.sh"]
+ENTRYPOINT ["/mystic/boot.sh"]
+CMD ["mystic"]
+#ENTRYPOINT while true;do sleep 50000;done
+#CMD ["/bin/bash", "-c", "/mystic/boot.sh"]
 #works
 
