@@ -10,9 +10,10 @@ if [ "$1" = 'mystic' ]; then
     /mystic/mis daemon
     #/mystic/start.sh
     
-    while true
-      do sleep 50000
-    done
+    tail -f /mystic/logs/mis.log
+    #while true
+    #  do sleep 50000
+    #done
     
     #/mystic/mis 
     #exec su - root -c 'cd /mystic && /mystic/mis daemon'
