@@ -7,9 +7,13 @@ if [ "$1" = 'mystic' ]; then
     #if [ -z "$(ls -A "$PGDATA")" ]; then
     #    gosu postgres initdb
     #fi
+    /mystic/start.sh
+    
     while true
       do sleep 50000
     done
+    
+    #/mystic/mis 
     #exec su - root -c 'cd /mystic && /mystic/mis daemon'
 fi
 
