@@ -6,6 +6,7 @@ Docker basic install of the mystic BBS software
 - added EXPOSE ports for Synology docker
 - changed cryptlib download link
 - changed ENTRYPOINT
+- tail log file instead of sleep
 
 # Mystic BBS systemd Start/Stop Scripts
 
