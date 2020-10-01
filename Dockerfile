@@ -4,7 +4,7 @@ MAINTAINER KALRONG <xrb@kalrong.net>
 WORKDIR /root
 RUN sed -i "s#deb http://deb.debian.org/debian stretch main#deb http://deb.debian.org/debian stretch main non-free#g" /etc/apt/sources.list
 RUN apt-get update; apt-get -y upgrade
-RUN dpkg --add-architecture i386; apt-get update; apt-get -y install libc6:i386 wget build-essential manpages-dev unzip unrar procps
+RUN dpkg --add-architecture i386; apt-get update; apt-get -y install libc6:i386 wget build-essential manpages-dev unzip unrar procps software-properties-common
 RUN add-apt-repository universe
 RUN apt-get -y install mc
 RUN apt-get clean
