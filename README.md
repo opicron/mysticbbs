@@ -50,3 +50,5 @@ http://www.mysticbbs.com/screenshots.html
 http://andr01d.zapto.org:8080//tutor/p1liner.txt.htm
 
 http://andr01d.zapto.org:8080//tutor/1ledit.txt.htm
+
+http://docs.wwivbbs.org/en/latest/conn/fail2ban/
