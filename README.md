@@ -31,6 +31,14 @@ Ports:
 
 ![Alt text](/ports_crop.png?raw=true "Ports")
 
+# telnet clients
+
+- MobaXterm (need serious configuration to get ANSI working)
+- Netrunner v2 (easy)
+- SyncTerm
+- EtherTerm3
+- MT32
+
 # random
 
 https://anotherdroidbbs.wordpress.com/2017/07/04/display-ansi-art-in-mystic-menus/
