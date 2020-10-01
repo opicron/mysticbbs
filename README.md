@@ -9,8 +9,6 @@ Synology specific Docker install of the mystic BBS software
 - changed main window to tail log instead of sleep
 - added start/stop scripts
 
-![Alt text](/ports.png?raw=true "Ports")
-
 # start/stop scripts
 
 Used the following source for the start/stop scripts:
@@ -19,4 +17,8 @@ https://vswitchzero.com/mystic-systemd/
 # todo:
 - tba
 
+# install
 
+![Alt text](/volume.png?raw=true "Volume")
+
+![Alt text](/ports.png?raw=true "Ports")
