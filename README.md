@@ -19,6 +19,6 @@ https://vswitchzero.com/mystic-systemd/
 
 # install
 
-![Alt text](/volume.png?raw=true "Volume")
+![Alt text](/volumes.png?raw=true "Volumes")
 
 ![Alt text](/ports.png?raw=true "Ports")
