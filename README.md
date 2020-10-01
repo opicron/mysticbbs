@@ -41,5 +41,6 @@ Ports:
 
 # random
 
+http://www.mysticbbs.com/downloads.html
 https://anotherdroidbbs.wordpress.com/2017/07/04/display-ansi-art-in-mystic-menus/
 http://www.mysticbbs.com/screenshots.html 
