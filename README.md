@@ -48,3 +48,5 @@ https://anotherdroidbbs.wordpress.com/2017/07/04/display-ansi-art-in-mystic-menu
 http://www.mysticbbs.com/screenshots.html 
 
 http://andr01d.zapto.org:8080//tutor/p1liner.txt.htm
+
+http://andr01d.zapto.org:8080//tutor/1ledit.txt.htm
