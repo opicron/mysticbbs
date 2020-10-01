@@ -1,13 +1,14 @@
 #!/bin/bash
 #set -e
 
-if [ "$1" = 'mystic' ]; then
+if [ "$1" = 'mystic' ]
+then
     #chown -R postgres "$PGDATA"
 
     #if [ -z "$(ls -A "$PGDATA")" ]; then
     #    gosu postgres initdb
     #fi
-    /mystic/mis daemon
+    /mystic/mis daemon &
     #/mystic/start.sh
     
     tail -f /mystic/logs/mis.log
@@ -17,10 +18,9 @@ if [ "$1" = 'mystic' ]; then
     
     #/mystic/mis 
     #exec su - root -c 'cd /mystic && /mystic/mis daemon'
+else
+    exec "$@"
 fi
-
-exec "$@"
-
 
 # Mystic BBS docker boot script
 #exec /mystic/start.sh
