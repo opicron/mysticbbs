@@ -39,6 +39,10 @@ Ports:
 - EtherTerm3
 - MT32
 
+# modding
+
+https://www.youtube.com/watch?v=uguo1hr2AQg
+
 # random
 
 http://www.mysticbbs.com/downloads.html
