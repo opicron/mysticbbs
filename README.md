@@ -28,3 +28,7 @@ If you want to mount your custom mystic install you can mount the volume as belo
 Ports:
 
 ![Alt text](/ports.png?raw=true "Ports")
+
+# random
+
+https://anotherdroidbbs.wordpress.com/2017/07/04/display-ansi-art-in-mystic-menus/
