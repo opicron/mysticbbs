@@ -25,11 +25,11 @@ Volumes:
 
 If you want to mount your custom mystic install you can mount the volume as below and it will override the fresh install. Do not mount the mystic volume if you wish to use the default install. It is recommended to copy the files after a fresh install and add the docker again mounting your own mystic folder to keep your configuration data outside the docker.
 
-![Alt text](/volumes.png "Volumes")
+![Alt text](/volumes_crop.png "Volumes")
 
 Ports:
 
-![Alt text](/ports.png?raw=true "Ports")
+![Alt text](/ports_crop.png?raw=true "Ports")
 
 # random
 
