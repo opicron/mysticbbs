@@ -8,7 +8,8 @@ then
     #if [ -z "$(ls -A "$PGDATA")" ]; then
     #    gosu postgres initdb
     #fi
-    /mystic/mis daemon &
+    rm /mystic/semaphore/mis.bsy
+    /mystic/mis daemon
     #/mystic/start.sh
     
     tail -f /mystic/logs/mis.log
