@@ -27,11 +27,15 @@ If you want to mount your custom mystic install you can mount the volume as belo
 
 ![Alt text](/volumes_crop.png "Volumes")
 
-Logs are shown in main docker window:
+Logs: 
+
+To make the usage easier the logs are tail'ed in main docker window as in the following example. 
 
 ![Alt text](/logs.png "Logs")
 
-Ports:
+Ports: 
+
+Make sure you map the ports from AUTO to manually set ports. If not set manually Synology will set random ports on each restart:
 
 ![Alt text](/ports_crop.png?raw=true "Ports")
 
