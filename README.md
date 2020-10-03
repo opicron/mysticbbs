@@ -21,19 +21,19 @@ https://vswitchzero.com/mystic-systemd/
 
 # install
 
-Volumes:
+## Volumes
 
 If you want to mount your custom mystic install you can mount the volume as below and it will override the fresh install. Do not mount the mystic volume if you wish to use the default install. It is recommended to copy the files after a fresh install and add the docker again mounting your own mystic folder to keep your configuration data outside the docker.
 
 ![Alt text](/volumes_crop.png "Volumes")
 
-Logs: 
+## Logs
 
 To make the usage easier the logs are tail'ed in main docker window as in the following example. 
 
 ![Alt text](/logs.png "Logs")
 
-Ports: 
+## Ports
 
 Make sure you map the ports from AUTO to manually set ports. If not set manually Synology will set random ports on each restart:
 
