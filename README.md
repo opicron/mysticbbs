@@ -33,8 +33,8 @@ Ports:
 
 # telnet clients
 
-- MobaXterm (need serious configuration to get ANSI working)
-- Netrunner v2 (easy)
+- MobaXterm (need configuration to get ANSI working well)
+- Netrunner v2 (best for mystic and easy to configure)
 - SyncTerm
 - EtherTerm3
 - MT32
