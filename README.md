@@ -27,6 +27,10 @@ If you want to mount your custom mystic install you can mount the volume as belo
 
 ![Alt text](/volumes_crop.png "Volumes")
 
+Logs are shown in main docker window:
+
+![Alt text](/logs.png "Logs")
+
 Ports:
 
 ![Alt text](/ports_crop.png?raw=true "Ports")
