@@ -10,6 +10,7 @@ Synology specific Docker install of the mystic BBS software
 - changed ENTRYPOINT
 - changed main window to tail log instead of sleep
 - added start/stop scripts
+- added python for MPY scripts
 
 # start/stop scripts
 
