@@ -9,9 +9,10 @@ Synology specific Docker install of the mystic BBS software
 - changed cryptlib download link
 - changed ENTRYPOINT
 - changed main window to tail log instead of sleep
-- added start/stop scripts
-- added python for MPY scripts
-- added pip for dependencies install MPY scripts
+- added start/stop bash scripts
+- added python for mystic scripts
+- added pip for dependency installs
+- added link from unrar to rar
 
 # start/stop scripts
 
