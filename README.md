@@ -7,7 +7,7 @@ Synology specific Docker install of the Mystic v1.12 alpha 39 BBS software
 <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/main.PNG" width="300">
 <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/login.PNG" width="300">
 
-// Yes, I know there is an version alpha 46
+// Yes, I know there is an version alpha 46, i'm running it-- upgrade yourself ;)
 
 29/09/2020:
 - added EXPOSE ports for Synology docker
