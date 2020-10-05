@@ -33,19 +33,19 @@ https://vswitchzero.com/mystic-systemd/
 
 If you want to mount your custom mystic install you can mount the volume as below and it will override the fresh install. Do not mount the mystic volume if you wish to use the default install. It is recommended to copy the files after a fresh install and add the docker again mounting your own mystic folder to keep your configuration data outside the docker.
 
-<img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/volumes_crop.png" width="300">
+<img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/volumes_crop.png" width="400">
 
 ## Logs
 
 To make the usage easier the logs are tail'ed in main docker window as in the following example. 
 
-![Alt text](/logs.png "Logs" )
+<img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/logs.png" width="400">
 
 ## Ports
 
 Make sure you map the ports from AUTO to manually set ports. If not set manually Synology will set random ports on each restart:
 
-![Alt text](/ports_crop.png?raw=true "Ports" )
+<img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/ports_crop.png" width="400">
 
 # telnet clients
 
