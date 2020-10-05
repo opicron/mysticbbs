@@ -4,7 +4,7 @@ Visit my board at bbs.opicron.eu
 
 Synology specific Docker install of the Mystic v1.12 alpha 39 BBS software
 
-![Alt text](/main.PNG "Main menu" )
+<img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/main.PNG" height="100">
 
 // Yes, I know there is an version alpha 46
 
