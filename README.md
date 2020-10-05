@@ -4,6 +4,8 @@ Visit my board at bbs.opicron.eu
 
 Synology specific Docker install of the Mystic v1.12 alpha 39 BBS software
 
+![Alt text](/main.png "Main menu" )
+
 // Yes, I know there is an version alpha 46
 
 29/09/2020:
@@ -30,7 +32,7 @@ https://vswitchzero.com/mystic-systemd/
 
 If you want to mount your custom mystic install you can mount the volume as below and it will override the fresh install. Do not mount the mystic volume if you wish to use the default install. It is recommended to copy the files after a fresh install and add the docker again mounting your own mystic folder to keep your configuration data outside the docker.
 
-![Alt text](/volumes_crop.png "Volumes" ) {:height="24px" width="48px"}
+![Alt text](/volumes_crop.png "Volumes" )
 
 ## Logs
 
