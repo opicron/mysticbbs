@@ -76,3 +76,5 @@ https://www.youtube.com/watch?v=HLmjBydrL7U
 # ssl
 
 https://stackoverflow.com/questions/32856389/how-to-import-ssl-in-python-2-7-6
+
+https://stackoverflow.com/questions/17309288/importerror-no-module-named-requests
