@@ -72,3 +72,7 @@ http://andr01d.zapto.org:8080//tutor/1ledit.txt.htm
 http://docs.wwivbbs.org/en/latest/conn/fail2ban/
 
 https://www.youtube.com/watch?v=HLmjBydrL7U
+
+# ssl
+
+https://stackoverflow.com/questions/32856389/how-to-import-ssl-in-python-2-7-6
