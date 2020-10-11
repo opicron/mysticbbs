@@ -4,7 +4,8 @@ MAINTAINER KALRONG <xrb@kalrong.net>
 WORKDIR /root
 RUN sed -i "s#deb http://deb.debian.org/debian stretch main#deb http://deb.debian.org/debian stretch main non-free#g" /etc/apt/sources.list
 RUN apt-get update; apt-get -y upgrade
-RUN dpkg --add-architecture i386; apt-get update; apt-get -y install libc6:i386 wget build-essential manpages-dev unzip unrar procps mc openssl libssl-dev libpython2.7 python-pip python-requests
+# openssl libssl-dev python-requests
+RUN dpkg --add-architecture i386; apt-get update; apt-get -y install libc6:i386 wget build-essential manpages-dev unzip unrar procps mc libpython2.7 python-pip
 RUN cp /usr/bin/unrar /usr/bin/rar
 RUN apt-get clean
 ADD http://www.mysticbbs.com/downloads/mys112a39_l64.rar /root
