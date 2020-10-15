@@ -55,6 +55,11 @@ Make sure you map the ports from AUTO to manually set ports. If not set manually
 - EtherTerm3
 - MT32
 
+# synology correct IP in docker
+
+sudo iptables -t nat -A PREROUTING -m addrtype --dst-type LOCAL -j DOCKER
+https://stackoverflow.com/questions/61624998/how-do-i-prevent-docker-from-source-nating-traffic-on-synology-nas
+
 # modding
 
 https://www.youtube.com/watch?v=uguo1hr2AQg
