@@ -83,3 +83,11 @@ https://www.youtube.com/watch?v=HLmjBydrL7U
 https://stackoverflow.com/questions/32856389/how-to-import-ssl-in-python-2-7-6
 
 https://stackoverflow.com/questions/17309288/importerror-no-module-named-requests
+
+# msg_seek crash
+
+https://bbs.electronicchicken.com/?page=001-forum.ssjs&sub=fsxnet_fsx_mys&thread=3930
+
+http://necrobbs.com/?page=001-forum.ssjs&sub=fsxnet_fsx_mys&thread=1627
+
+
