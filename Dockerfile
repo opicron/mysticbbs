@@ -5,7 +5,25 @@ WORKDIR /root
 RUN sed -i "s#deb http://deb.debian.org/debian stretch main#deb http://deb.debian.org/debian stretch main non-free#g" /etc/apt/sources.list
 RUN apt-get update; apt-get -y upgrade
 # openssl libssl-dev
-RUN dpkg --add-architecture i386; apt-get update; apt-get -y install libc6:i386 wget build-essential manpages-dev unzip unrar procps mc libpython2.7 python-pip
+#RUN dpkg --add-architecture i386; apt-get update; apt-get -y install libc6:i386 wget build-essential manpages-dev unzip unrar procps mc libpython2.7 python-pip
+#RUN dpkg --add-architecture i386; apt-get update; apt-get -y install libc6:i386 wget build-essential manpages-dev unzip unrar procps mc libpython2.7:i386 python-pip
+
+#install and compile python
+RUN dpkg --add-architecture i386; apt-get update
+RUN apt-get -y install build-essential checkinstall manpages-dev unzip unrar procps mc htop
+#RUN apt-get -y install build-essential libsqlite3-dev zlib1g-dev libncurses5-dev libgdbm-dev libbz2-dev libreadline-gplv2-dev libssl-dev libdb-dev tk-dev
+RUN apt-get -y libsqlite3-dev zlib1g-dev libncursesw5-dev libgdbm-dev libbz2-dev libreadline-gplv2-dev libssl-dev libdb-dev tk-dev libc6-dev libbz2-dev
+
+RUN cd /usr/src
+RUN wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz.tgz
+RUN tar -xzf Python-2.7.18.tgz
+#RUN cd Python-2.7.18
+cd /usr/src/Python-2.7.18
+#RUN ./configure --prefix=/usr --enable-shared
+RUN ./configure -enable-optimizations -enable-unicode=ucs4 -enable-shared
+#RUN make
+RUN make install
+
 RUN cp /usr/bin/unrar /usr/bin/rar
 RUN apt-get clean
 ADD http://www.mysticbbs.com/downloads/mys112a39_l64.rar /root
