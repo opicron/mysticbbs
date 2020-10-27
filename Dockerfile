@@ -18,7 +18,7 @@ RUN cd /usr/src
 RUN wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz.tgz
 RUN tar -xzf Python-2.7.18.tgz
 #RUN cd Python-2.7.18
-cd /usr/src/Python-2.7.18
+RUN cd /usr/src/Python-2.7.18
 #RUN ./configure --prefix=/usr --enable-shared
 RUN ./configure -enable-optimizations -enable-unicode=ucs4 -enable-shared
 #RUN make
