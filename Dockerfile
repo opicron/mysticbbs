@@ -1,5 +1,5 @@
 FROM debian:stretch-slim
-MAINTAINER KALRONG <xrb@kalrong.net>
+MAINTAINER opicron <opicron@gmail.com>
 
 WORKDIR /root
 RUN sed -i "s#deb http://deb.debian.org/debian stretch main#deb http://deb.debian.org/debian stretch main non-free#g" /etc/apt/sources.list
