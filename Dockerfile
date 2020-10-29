@@ -13,7 +13,7 @@ RUN dpkg --add-architecture i386; apt-get update
 RUN apt-get -y install build-essential checkinstall manpages-dev unzip unrar procps mc htop wget
 #RUN apt-get -y install libsqlite3-dev zlib1g-dev libncurses5-dev libgdbm-dev libbz2-dev libreadline-gplv2-dev libssl-dev libdb-dev tk-dev
 RUN apt-get -y install libsqlite3-dev zlib1g-dev libncursesw5-dev libgdbm-dev libbz2-dev libreadline-gplv2-dev libssl-dev libdb-dev tk-dev libc6-dev libbz2-dev
-RUN apt-get -y install zip rar cron
+RUN apt-get -y install zip rar
 
 #RUN cd /usr/src
 RUN wget https://www.python.org/ftp/python/2.7.15/Python-2.7.16.tgz
@@ -26,12 +26,14 @@ RUN ./configure -enable-optimizations -enable-unicode=ucs4 -enable-shared
 RUN make
 RUN make install
 
+#RUN apt-get -y install cron
+
 # Copy hello-cron file to the cron.d directory
 COPY mail-cron /etc/cron.d/mail-cron
 RUN chmod +x /etc/cron.d/mail-cron
 # Apply cron job
 RUN crontab /etc/cron.d/mail-cron
-RUN cron
+#RUN cron
 
 WORKDIR /root
 RUN cp /usr/bin/unrar /usr/bin/rar
