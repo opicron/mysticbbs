@@ -13,7 +13,8 @@ RUN dpkg --add-architecture i386; apt-get update
 RUN apt-get -y install build-essential checkinstall manpages-dev unzip unrar procps mc htop wget zip rar
 #RUN apt-get -y install libsqlite3-dev zlib1g-dev libncurses5-dev libgdbm-dev libbz2-dev libreadline-gplv2-dev libssl-dev libdb-dev tk-dev
 RUN apt-get -y install libsqlite3-dev zlib1g-dev libncurses5-dev libgdbm-dev libbz2-dev libreadline-gplv2-dev libssl-dev libdb-dev tk-dev libc6-dev libbz2-dev
-
+RUN python -V
+RUN ./test
 #RUN cd /usr/src
 RUN wget https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tgz
 RUN tar -xzf Python-2.7.15.tgz
