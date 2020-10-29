@@ -16,13 +16,13 @@ RUN apt-get -y install libsqlite3-dev zlib1g-dev libncursesw5-dev libgdbm-dev li
 RUN apt-get -y install zip rar cron
 
 #RUN cd /usr/src
-RUN wget https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tgz
-RUN tar -xzf Python-2.7.15.tgz
-RUN cd /root/Python-2.7.15
-WORKDIR /root/Python-2.7.15
+RUN wget https://www.python.org/ftp/python/2.7.15/Python-2.7.16.tgz
+RUN tar -xzf Python-2.7.16.tgz
+RUN cd /root/Python-2.7.16
+WORKDIR /root/Python-2.7.16
 #RUN cd /usr/src/Python-2.7.18
 #RUN ./configure -enable-optimizations --prefix=/usr --enable-shared
-RUN ./configure -enable-unicode=ucs4 -enable-shared
+RUN ./configure -enable-optimizations -enable-unicode=ucs4 -enable-shared
 RUN make
 RUN make install
 
