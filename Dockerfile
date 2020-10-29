@@ -21,7 +21,7 @@ RUN cd /root/Python-2.7.15
 WORKDIR /root/Python-2.7.15
 #RUN cd /usr/src/Python-2.7.18
 #RUN ./configure --prefix=/usr --enable-shared
-RUN ./configure --prefix=/usr -enable-optimizations -enable-unicode=ucs2 -enable-shared
+RUN ./configure --prefix=/usr -enable-optimizations -enable-unicode=ucs4 -enable-shared
 #RUN make
 RUN make install
 
