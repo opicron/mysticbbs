@@ -31,6 +31,7 @@ COPY mail-cron /etc/cron.d/mail-cron
 RUN chmod +x /etc/cron.d/mail-cron
 # Apply cron job
 RUN crontab /etc/cron.d/mail-cron
+RUN cron
 
 WORKDIR /root
 RUN cp /usr/bin/unrar /usr/bin/rar
