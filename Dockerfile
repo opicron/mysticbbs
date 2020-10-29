@@ -12,7 +12,7 @@ RUN apt-get update; apt-get -y upgrade
 #install and compile python
 RUN dpkg --add-architecture i386; apt-get update
 #RUN apt-get -y install build-essential checkinstall manpages-dev unzip unrar procps mc htop wget
-RUN apt-get -y dev unzip unrar procps mc htop wget
+RUN apt-get -y install unzip unrar procps mc htop wget
 ##RUN apt-get -y install libsqlite3-dev zlib1g-dev libncurses5-dev libgdbm-dev libbz2-dev libreadline-gplv2-dev libssl-dev libdb-dev tk-dev
 #RUN apt-get -y install libsqlite3-dev zlib1g-dev libncursesw5-dev libgdbm-dev libbz2-dev libreadline-gplv2-dev libssl-dev libdb-dev tk-dev libc6-dev libbz2-dev
 RUN apt-get -y install zip rar
