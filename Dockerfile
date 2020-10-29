@@ -26,7 +26,7 @@ RUN ./configure -enable-optimizations -enable-unicode=ucs4 -enable-shared
 RUN make
 RUN make install
 
-#RUN apt-get -y install cron
+RUN apt-get -y install cron
 
 # Copy hello-cron file to the cron.d directory
 COPY mail-cron /etc/cron.d/mail-cron
