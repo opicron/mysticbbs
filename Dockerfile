@@ -58,6 +58,7 @@ RUN ./upgrade
 #RUN apt-get -y purge wget build-essential manpages-dev unzip unrar
 EXPOSE 23/tcp
 EXPOSE 22/tcp
+EXPOSE 24554/tcp
 #CMD ["/mystic/mis","server"]
 #ENTRYPOINT ["/mystic/boot.sh"]
 #keeps restarting
