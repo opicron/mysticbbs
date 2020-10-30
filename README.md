@@ -12,6 +12,7 @@ Synology specific Docker install of the Mystic v1.12 alpha 39 BBS software
 30/10/2020:
 - added cron, zip, rar for fidopoll/mutil mail
 - changed from stretch-slim to python2.7.18:stretch (python msg_seek() crash)
+- added EXPOSE for BinkP mail server
 
 28/10/2020:
 - added manual compile Python 2.7.18 (overruled by cron, which installs 2.7.13)
