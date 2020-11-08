@@ -4,6 +4,7 @@
 #Define cleanup procedure
 cleanup() {
     echo "Container stopped, performing cleanup..." >> /mystic/logs/mis.log
+    #the stop script is not required-- just for safety
     /mystic/stop.sh
 }
 
