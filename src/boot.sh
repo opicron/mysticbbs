@@ -1,6 +1,8 @@
 #!/bin/bash
 #set -e
 
+# Mystic BBS docker boot script
+
 #Define cleanup procedure
 cleanup() {
     echo "Container stopped, performing cleanup..." >> /mystic/logs/mis.log
@@ -12,33 +14,24 @@ cleanup() {
 trap 'cleanup' SIGTERM
 
 if [ "$1" = 'mystic' ]; then
-    #chown -R postgres "$PGDATA"
 
-    #if [ -z "$(ls -A "$PGDATA")" ]; then
-    #    gosu postgres initdb
-    #fi
+    # run cron for fido polling
     cron
+    
+    # remove temp file 
     rm /mystic/semaphore/mis.bsy
-    #/mystic/mis daemon
+    
+    # run as server on background
     /mystic/mis server &
+    
+    # catch PID
     child=$!
-    #/mystic/start.sh
-    
-    #tail -f /mystic/logs/mis.log
 
-    #while true
-    #  do sleep 50000
-    #done
-    
-    #/mystic/mis 
-    #exec su - root -c 'cd /mystic && /mystic/mis daemon'
+    # removed due to correct handling of sigterm
+    #tail -f /mystic/logs/mis.log
 else
     exec "$@" &
 fi
 
-#Wait
+# Wait for server PID
 wait "$child"
-
-# Mystic BBS docker boot script
-#exec /mystic/start.sh
-#exec su - root -c 'cd /mystic && /mystic/mis daemon'
