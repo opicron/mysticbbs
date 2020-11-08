@@ -10,7 +10,7 @@ cleanup() {
     /mystic/stop.sh
     
     #exit our script (pid 1) thus closing docker correctly
-    exit
+    exit 0
 }
 
 # trap SIGTERM
