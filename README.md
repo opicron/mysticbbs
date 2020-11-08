@@ -9,6 +9,10 @@ Synology specific Docker install of the Mystic v1.12 alpha 39 BBS software
 
 // Yes, I know there is an version alpha 46, i'm running it-- upgrade yourself ;)
 
+11/08/2020:
+- added cleanup signal to entrypoint bash script
+- no more forced shutdowns :)
+
 30/10/2020:
 - added cron, zip, rar for fidopoll/mutil mail
 - changed from stretch-slim to python2.7.18:stretch (see msg_seek() crash)
