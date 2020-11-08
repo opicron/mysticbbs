@@ -1,6 +1,15 @@
 #!/bin/bash
 #set -e
 
+#Define cleanup procedure
+cleanup() {
+    echo "Container stopped, performing cleanup..."
+    /mystic/stop.sh
+}
+
+#Trap SIGTERM
+trap 'cleanup' SIGTERM
+
 if [ "$1" = 'mystic' ]
 then
     #chown -R postgres "$PGDATA"
@@ -23,6 +32,9 @@ then
 else
     exec "$@"
 fi
+
+#Wait
+wait $!
 
 # Mystic BBS docker boot script
 #exec /mystic/start.sh
