@@ -11,7 +11,7 @@ Synology specific Docker install of the Mystic v1.12 alpha 39 BBS software
 
 11/08/2020:
 - added cleanup signal to entrypoint bash script
-- no more forced shutdowns :)
+- no more forced shutdowns (see sigterm handling)
 
 30/10/2020:
 - added cron, zip, rar for fidopoll/mutil mail
@@ -101,5 +101,12 @@ https://stackoverflow.com/questions/17309288/importerror-no-module-named-request
 https://bbs.electronicchicken.com/?page=001-forum.ssjs&sub=fsxnet_fsx_mys&thread=3930
 
 http://necrobbs.com/?page=001-forum.ssjs&sub=fsxnet_fsx_mys&thread=1627
+
+# sigterm handling
+
+https://unix.stackexchange.com/questions/146756/forward-sigterm-to-child-in-bash/146770#146770
+
+https://stackoverflow.com/questions/41451159/how-to-execute-a-script-when-i-terminate-a-docker-container
+
 
 
