@@ -2,7 +2,7 @@ Visit my board at bbs.opicron.eu
 
 # mysticbbs
 
-Synology specific Docker install of the Mystic v1.12 alpha 39 BBS software
+Docker install of the Mystic v1.12 alpha 39 BBS software
 
 <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/main.PNG" width="300"> <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/login.PNG" width="300">
 
