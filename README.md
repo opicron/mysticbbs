@@ -3,7 +3,6 @@ Visit my board at bbs.opicron.eu
 # mysticbbs
 
 Docker install of the Mystic v1.12 alpha 39 BBS software.
-
 With start, stop and boot script for correct signal term handling.
 
 <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/main.PNG" width="300"> <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/login.PNG" width="300">
