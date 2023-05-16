@@ -9,8 +9,7 @@ start: ## start
 	set -eux && \
 	docker compose stop && \
 	docker compose up -d && \
-	docker-compose exec mysticbbs ./scripts/boot.sh && \
-	docker compose ps
+	docker-compose exec mysticbbs /bin/bash -c "/mystic/scripts/boot.sh mystic"
 
 .PHONY: install
 install: ## install
