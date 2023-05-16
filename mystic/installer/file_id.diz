@@ -1,0 +1,21 @@
+Mystic BBS v1.12 A48            Linux 64-bit
+============================================
+ + Free feature-crazy multinode BBS software
+ + TELNET,RLOGIN,SSH,FTP,NNTP,HTTP,POP/SMTP
+ + BINKP/FTP mailer/tosser with Area/FileFix
+ + QWK/QWKE Networking via FTP transmission
+ + Event-based menuing system w/ lightbars
+ + Powerful language/theme/prompt system
+ + Pascal and Python scripting languages
+ + JAM message bases w/ QWKE offmail mail
+ + Msg editor w/ inline ANSI & spell check
+ + Lightbar Sysop-reader-like msg reading
+ + Long file names, internal X/Y/Zmodem
+ + 99-line file description & FILE_ID.DIZ
+ + DOS CP437 and UTF8 character translation
+ + Many DOS DOOR formats and 32-bit DOOR32
+ + Multinode teleconference & user2user chat
+ + BBS list, Voting, Time bank, 1Liners
+   Quote of the day, Rumors, Split Chat,
+   Ansi gallery, top10, fido importers, node
+   monitor with full telnet/ssh client, more
