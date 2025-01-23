@@ -1,0 +1,26 @@
+^$
+------------------- Node *
+* Connect from *
+* Country: *
+* Setting time left to 10
+* Set time left *
+* Setting menu to *
+* Executing: echo
+* Execution complete: 0
+* returned -1
+* Returned -1
+* MPL execute: /mystic/themes/default/scripts/startup.mpx
+* MPL execute: /mystic/themes/default/scripts/semaphore.mpx
+* MPL execute: /mystic/themes/default/scripts/connect.mpx
+* MPL execute: /mystic/themes/default/scripts/op-prmp.mpx
+* MPL execute: /mystic/themes/default/scripts/stuffkey-n.mpx
+* MPL execute: /mystic/themes/default/scripts/op-node.mpx
+* execute: /mystic/themes/default/scripts/op-rumr.mpx
+* MUTIL 000 Already running
+* DEBUG Py*
+* Shutting down
+* User logged off
+* New user application
+* SMTP R:*
+* SMTP S:*
+* PYTHON *
