@@ -1,28 +1,53 @@
-Visit my board at bbs.opicron.eu
-
 # mysticbbs
 
-Docker install of the Mystic v1.12 alpha 39 BBS software.
+Docker install of the Mystic v1.12 alpha 48 BBS software.
 
 Includes start, stop and boot script for correct signal term handling.
 
-<img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/main.PNG" width="300"> <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/login.PNG" width="300">
+Visit opicron's board at bbs.opicron.eu
 
-// Yes, I know there is an version alpha 46, i'm running it-- upgrade yourself ;)
+<img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/main.PNG" width="300">
+<img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/login.PNG" width="300">
 
-11/08/2020:
+---
+
+## How to use
+
+1. install: `make install`
+2. configure: `make config`
+3. boot: `make start`
+4. upgrade (optional):`make upgrade`
+   - To upgrade, simply put the new install files in /installer and run the following commands:
+
+---
+
+## Changelog
+
+### 05/16/2023
+
+- it now installs into /mystic/src
+- y4my4my4m revived this project and updated to the latest alpha release
+- switched to ubuntu
+- simplified the dockerfile
+- added docker-support
+
+### 08/11/2020
+
 - added cleanup signal to entrypoint bash script
 - no more forced shutdowns (see sigterm handling)
 
-30/10/2020:
+### 10/30/2020
+
 - added cron, zip, rar for fidopoll/mutil mail
 - changed from stretch-slim to python2.7.18:stretch (see msg_seek() crash)
 - added EXPOSE for BinkP mail server
 
-28/10/2020:
+### 10/28/2020
+
 - added manual compile Python 2.7.18 (overruled by cron, which installs 2.7.13)
 
-29/09/2020:
+### 09/29/2020
+
 - added EXPOSE ports for Synology docker
 - changed cryptlib download link
 - changed ENTRYPOINT
@@ -32,83 +57,76 @@ Includes start, stop and boot script for correct signal term handling.
 - added pip for dependency installs
 - added link from unrar to rar
 
-# start/stop scripts
-
-Used the following source for the start/stop scripts:
-https://vswitchzero.com/mystic-systemd/
-
-# todo:
-- tba
-
-# install
+---
 
 ## Volumes
 
-If you want to mount your custom mystic install you can mount the volume as below and it will override the fresh install. Do not mount the mystic volume if you wish to use the default install. It is recommended to copy the files after a fresh install and add the docker again mounting your own mystic folder to keep your configuration data outside the docker.
-
-<img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/volumes_crop.png" width="400">
-
-## Logs
-
-To make the usage easier the logs are tail'ed in main docker window as in the following example. 
-
-<img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/logs.png" width="400">
+/mystic (the generated src is gitignored so as to not upload your data)
 
 ## Ports
 
-Make sure you map the ports from AUTO to manually set ports. If not set manually Synology will set random ports on each restart:
+Ports are forwarded to the host system. The following ports are used:
 
-<img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/ports_crop.png" width="400">
+- 22    →　4000
+- 22    →　4001
+- 24554 →　4002
 
-# telnet clients
+## telnet clients
 
 - MobaXterm (need configuration to get ANSI working well)
 - Netrunner v2 (best for mystic and easy to configure)
 - SyncTerm
 - EtherTerm3
 - MT32
+- TelnetClient for ZealOS
 
-# synology correct IP in docker
+## start/stop scripts
+
+Used the following source for the start/stop scripts:
+[https://vswitchzero.com/mystic-systemd/]
+
+## todo
+
+- SSL via an apache docker needed?
+
+## synology correct IP in docker
 
 sudo iptables -t nat -A PREROUTING -m addrtype --dst-type LOCAL -j DOCKER
 
-https://stackoverflow.com/questions/61624998/how-do-i-prevent-docker-from-source-nating-traffic-on-synology-nas
+[https://stackoverflow.com/questions/61624998/how-do-i-prevent-docker-from-source-nating-traffic-on-synology-nas]
 
-# modding
+## modding
 
-https://www.youtube.com/watch?v=uguo1hr2AQg
+[https://www.youtube.com/watch?v=uguo1hr2AQg]
 
-http://www.mysticbbs.com/downloads.html
+[http://www.mysticbbs.com/downloads.html]
 
-https://anotherdroidbbs.wordpress.com/2017/07/04/display-ansi-art-in-mystic-menus/
+[https://anotherdroidbbs.wordpress.com/2017/07/04/display-ansi-art-in-mystic-menus/]
 
-http://www.mysticbbs.com/screenshots.html 
+[http://www.mysticbbs.com/screenshots.html]
 
-http://andr01d.zapto.org:8080//tutor/p1liner.txt.htm
+[http://andr01d.zapto.org:8080//tutor/p1liner.txt.htm]
 
-http://andr01d.zapto.org:8080//tutor/1ledit.txt.htm
+[http://andr01d.zapto.org:8080//tutor/1ledit.txt.htm]
 
-http://docs.wwivbbs.org/en/latest/conn/fail2ban/
+[http://docs.wwivbbs.org/en/latest/conn/fail2ban/]
 
-https://www.youtube.com/watch?v=HLmjBydrL7U
+[https://www.youtube.com/watch?v=HLmjBydrL7U]
 
-# ssl
+## ssl
 
-https://stackoverflow.com/questions/32856389/how-to-import-ssl-in-python-2-7-6
+[https://stackoverflow.com/questions/32856389/how-to-import-ssl-in-python-2-7-6]
 
-https://stackoverflow.com/questions/17309288/importerror-no-module-named-requests
+[https://stackoverflow.com/questions/17309288/importerror-no-module-named-requests]
 
-# msg_seek crash
+## msg_seek crash
 
-https://bbs.electronicchicken.com/?page=001-forum.ssjs&sub=fsxnet_fsx_mys&thread=3930
+[https://bbs.electronicchicken.com/?page=001-forum.ssjs&sub=fsxnet_fsx_mys&thread=3930]
 
-http://necrobbs.com/?page=001-forum.ssjs&sub=fsxnet_fsx_mys&thread=1627
+[http://necrobbs.com/?page=001-forum.ssjs&sub=fsxnet_fsx_mys&thread=1627]
 
-# sigterm handling
+## sigterm handling
 
-https://unix.stackexchange.com/questions/146756/forward-sigterm-to-child-in-bash/146770#146770
+[https://unix.stackexchange.com/questions/146756/forward-sigterm-to-child-in-bash/146770#146770]
 
-https://stackoverflow.com/questions/41451159/how-to-execute-a-script-when-i-terminate-a-docker-container
-
-
-
+[https://stackoverflow.com/questions/41451159/how-to-execute-a-script-when-i-terminate-a-docker-container]

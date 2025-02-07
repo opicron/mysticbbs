@@ -1,8 +1,0 @@
-d:\code\ge\ge.exe mysticlogo2.ans 
-Heap dump by heaptrc unit
-30 memory blocks allocated : 2851118/2851224
-30 memory blocks freed     : 2851118/2851224
-0 unfreed memory blocks : 0
-True heap size : 196608
-True free heap : 196496
-Should be : 196608

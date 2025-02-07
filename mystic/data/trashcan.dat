@@ -1,6 +1,0 @@
-; TRASHCAN.DAT
-;
-; This file specifies a list of user names that will be refused by Mystic if
-; a user attempts to creat an account with one of the names.
-;
-; Each line should contain a single name.  Names are not case sensitive.

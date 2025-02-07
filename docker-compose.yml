@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mysticbbs:
+    build:
+      context: .
+      dockerfile: docker/mystic/Dockerfile
+    volumes:
+      - ./mystic:/mystic
+    ports:
+      - 4000:22
+      - 4001:23
+      - 4002:24554
+    restart: unless-stopped
