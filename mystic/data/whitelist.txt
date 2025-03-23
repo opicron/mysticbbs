@@ -1,6 +1,0 @@
-; WHITELIST.TXT: IP Address immunity list
-;
-; This file should have one IP address per line.  Each address can be an IPV4
-; or IPV6 address, and can contain wildcards.  For example: 127.* would allow
-; any IPV4 address that begins with 127 to be immune to any type of IP
-; blocking. "014f:*" would whitelist any IPV6 address that starts with 014f:

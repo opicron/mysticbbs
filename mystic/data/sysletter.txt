@@ -1,9 +1,0 @@
-A new user account has been created!
-
-   Handle: |UH
-Real name: |UN
- Security: |SL (|SD)
-       IP: |UY
- Hostname: |UX
-
-This account was created on |DA at |TI.
