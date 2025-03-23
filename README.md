@@ -6,8 +6,6 @@ Docker install of linux enviroment which runs Mystic BBS software.
 
 Includes start, stop and boot script for correct signal term handling.
 
-Mystic needs to be mounted in /mystic/
-
 <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/main.PNG" width="300"> <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/login.PNG" width="300">
 
 23/03/2024:
