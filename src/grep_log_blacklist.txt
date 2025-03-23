@@ -1,8 +1,16 @@
 ^$
++ * TELNET *
++ * SSH *
++ * EVENT Cmd:*
++ * EVENT Res: 0
++ * EVENT Running event: NewMSG*
++ * EVENT Running event: Kill*
++ * BINKP *
 ------------------- Node *
 * Connect from *
 * Country: *
-* Setting time left to 10
+* opicron logged in
+* Setting time left to
 * Set time left *
 * Setting menu to *
 * Executing: echo
