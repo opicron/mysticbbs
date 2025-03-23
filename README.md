@@ -11,10 +11,12 @@ Mystic needs to be mounted in /mystic/
 <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/main.PNG" width="300"> <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/login.PNG" width="300">
 
 23/03/2024:
-- changed from python2.7.18:strech to ubuntu
+- change from python2.7.18:strech to ubuntu
   - small image footprint
   - possibility to install python 3
   - etc etc
+- removed Mystic binaries
+  - mount Mystic to /mystic/ yourself
 - changed ENTRYPOINT to CMD so it can be overriden
     
 11/08/2020:
