@@ -4,7 +4,7 @@
 
 # cleanup procedure
 cleanup() {
-    echo "Container stopped, performing cleanup..." >> /mystic/logs/mis.log
+    #echo "Container stopped, performing cleanup..." >> /mystic/logs/mis.log
     
     # stop server
     /mystic/stop.sh
@@ -19,9 +19,19 @@ trap 'cleanup' SIGTERM
 if [ "$1" = 'mystic' ]; then
 
     # run cron for fido polling
-    cron
+    # Start cron in background
+    echo "Starting cron.."
+    service cron start
+
+    # Optional: confirm cron is running
+    pgrep cron || echo "Warning: cron failed to start"    
+
+    # run logger
+    echo "Running Logger script.."
+    /mystic/tailit.sh &
     
-    # run server
+    # start server
+    echo "Starting Mystic BBS.."
     /mystic/start.sh &
     
     # because we can not run the server mode
