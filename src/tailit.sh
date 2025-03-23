@@ -19,7 +19,7 @@ for i in $(seq 1 $num_nodes); do
     fi
     echo "${prefix}${line}" >> /mystic/logs/nodes.log
     escaped_line=$(echo "$line" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g')
-    curl -s -o /dev/null -X POST -H "Content-type: application/json" --data "{\"text\":\"${prefix}${escaped_line}\"}" https://hooks.slack.com/services/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
+    curl -s -o /dev/null -X POST -H "Content-type: application/json" --data "{\"text\":\"${prefix}${escaped_line}\"}" https://hooks.slack.com/services/xx/xx/xx
   done &
 done
 
@@ -31,7 +31,7 @@ tail -n0 -F /mystic/logs/errors.log | grep --line-buffered -Evf /mystic/grep_log
     echo "${line}" >> /mystic/logs/nodes.log
     #echo "${postfix}" >> /mystic/logs/nodes.log
     escaped_line=$(echo "$line" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g')
-    curl -s -o /dev/null -X POST -H "Content-type: application/json" --data "{'text':\"${escaped_line}\"}" https://hooks.slack.com/services/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
+    curl -s -o /dev/null -X POST -H "Content-type: application/json" --data "{'text':\"${escaped_line}\"}" https://hooks.slack.com/services/xx/xx/xx
 done &
 
 # Log mis
@@ -42,7 +42,7 @@ tail -n0 -F /mystic/logs/mis.log | grep --line-buffered -Evf /mystic/grep_log_bl
     echo "${line}" >> /mystic/logs/nodes.log
     #echo "${postfix}" >> /mystic/logs/nodes.log
     escaped_line=$(echo "$line" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g')
-    curl -s -o /dev/null -X POST -H "Content-type: application/json" --data "{\"text\":\"${prefix}${escaped_line}\"}" https://hooks.slack.com/services/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
+    curl -s -o /dev/null -X POST -H "Content-type: application/json" --data "{\"text\":\"${prefix}${escaped_line}\"}" https://hooks.slack.com/services/xx/xx/xx
 done &
 
 # Log everything to docker
