@@ -16,6 +16,8 @@ Includes start, stop and boot script for correct signal term handling.
 - removed Mystic binaries
   - mount Mystic to /mystic/ yourself
 - changed ENTRYPOINT to CMD so it can be overriden
+- added logger to synology console
+  - possible to blacklist log lines
     
 11/08/2020:
 - added cleanup signal to entrypoint bash script
