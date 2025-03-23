@@ -20,6 +20,7 @@ RUN apt install -y \
     procps \
     curl \
     dos2unix \
+    nano \
     htop
 
 #    dosemu
@@ -32,7 +33,21 @@ RUN apt install -y \
 RUN apt update && apt install -y python-minimal
 RUN apt update && apt install -y libpython2.7 libpython2.7-dev
 
-# Download and install CL library
+# add logrotate
+RUN apt update && apt install -y logrotate
+
+# create folder (or skip without error) and add config
+RUN mkdir -p /etc/logrotate.d && \
+    echo "/mystic/logs/*.log {" > /etc/logrotate.d/mystic && \
+    echo "    daily" >> /etc/logrotate.d/mystic && \
+    echo "    rotate 5" >> /etc/logrotate.d/mystic && \
+    echo "    missingok" >> /etc/logrotate.d/mystic && \
+    echo "    compress" >> /etc/logrotate.d/mystic && \
+    echo "    notifempty" >> /etc/logrotate.d/mystic && \
+    echo "    copytruncate" >> /etc/logrotate.d/mystic && \
+    echo "}" >> /etc/logrotate.d/mystic
+
+# Download and install CryptLib library
 
 #OLD METHOD
 WORKDIR /root/cl
