@@ -35,9 +35,12 @@ if [ "$1" = 'mystic' ]; then
     /mystic/start.sh &
     
     # because we can not run the server mode
-    while true
-      do sleep 1
-    done    
+    #while true
+    #  do sleep 1
+    #done    
+
+    # Fallback: keep container alive if boot.sh exits
+    tail -f /dev/null
     
     # run as server on background, takes waaay to much CPU!
     # this is this correct solution but in this case inefficient
