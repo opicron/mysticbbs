@@ -2,14 +2,21 @@ Visit my board at bbs.opicron.eu
 
 # mysticbbs
 
-Docker install of the Mystic v1.12 alpha 39 BBS software.
+Docker install of linux enviroment which runs Mystic BBS software.
 
 Includes start, stop and boot script for correct signal term handling.
 
+Mystic needs to be mounted in /mystic/
+
 <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/main.PNG" width="300"> <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/login.PNG" width="300">
 
-// Yes, I know there is an version alpha 46, i'm running it-- upgrade yourself ;)
-
+23/03/2024:
+- changed from python2.7.18:strech to ubuntu
+  - small image footprint
+  - possibility to install python 3
+  - etc etc
+- changed ENTRYPOINT to CMD so it can be overriden
+    
 11/08/2020:
 - added cleanup signal to entrypoint bash script
 - no more forced shutdowns (see sigterm handling)
