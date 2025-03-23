@@ -10,6 +10,7 @@ RUN apt update && apt upgrade -y
 RUN dpkg --add-architecture i386 && apt update
 RUN apt install -y \
     build-essential \
+    cron \
     unzip \
     unrar \
     zip \
@@ -22,8 +23,6 @@ RUN apt install -y \
     htop
 
 #    dosemu
-#    zip \
-#    rar \
 #    python3 \
 #    vim \
 #    nano \
