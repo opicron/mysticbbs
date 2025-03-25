@@ -47,6 +47,23 @@ Includes start, stop and boot script for correct signal term handling.
 - added pip for dependency installs
 - added link from unrar to rar
 
+# spawn/expect
+
+For running mystic -y scripts in background use this script:
+
+'''
+#!/usr/bin/expect -f
+
+# Set terminal type
+set env(TERM) "linux"
+
+# Start mystic
+spawn /mystic/mystic -uYourUser -pYourPass -yYourScript
+
+# Wait for it to finish (you can add more interaction if needed)
+expect eof
+'''
+
 # start/stop scripts
 
 Used the following source for the start/stop scripts:
