@@ -21,6 +21,9 @@ Includes start, stop and boot script for correct signal term handling.
 - added logrotate to replace Mystic roll
   - set roll type to "none" in mystic
   - all *.log files are handled by logrotate
+- added expect
+  - run mystic -y background scripts
+  - without spawn/expect mystic exits
     
 11/08/2020:
 - added cleanup signal to entrypoint bash script
