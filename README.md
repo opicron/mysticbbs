@@ -51,7 +51,7 @@ Includes start, stop and boot script for correct signal term handling.
 
 For running mystic -y scripts in background use this script:
 
-'''
+```
 #!/usr/bin/expect -f
 
 # Set terminal type
@@ -62,7 +62,7 @@ spawn /mystic/mystic -uYourUser -pYourPass -yYourScript
 
 # Wait for it to finish (you can add more interaction if needed)
 expect eof
-'''
+```
 
 # start/stop scripts
 
