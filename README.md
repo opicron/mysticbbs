@@ -54,6 +54,12 @@ For running mystic -y scripts in background use this script:
 ```
 #!/usr/bin/expect -f
 
+# Don't log spawn output to stdout
+log_user 0
+
+# Set a timeout (optional)
+set timeout 30
+
 # Set terminal type
 set env(TERM) "linux"
 
