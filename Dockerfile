@@ -21,6 +21,7 @@ RUN apt install -y \
     curl \
     dos2unix \
     nano \
+    expect \
     htop
 
 #    dosemu
