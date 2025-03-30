@@ -8,6 +8,12 @@ Includes start, stop and boot script for correct signal term handling.
 
 <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/main.PNG" width="300"> <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/login.PNG" width="300">
 
+30/03/2024:
+- added latest pip version for python 2.7
+  - sometimes installs as pip2
+- added get-pip python script to repo
+- added cryptlib archive to repo
+  
 23/03/2024:
 - change from python2.7.18:strech to ubuntu
   - small image footprint
