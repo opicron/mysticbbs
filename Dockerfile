@@ -22,7 +22,6 @@ RUN apt install -y \
     dos2unix \
     nano \
     expect \
-    python-pip \
     htop
 
 #    dosemu
@@ -50,11 +49,14 @@ RUN mkdir -p /etc/logrotate.d && \
     echo "    copytruncate" >> /etc/logrotate.d/mystic && \
     echo "}" >> /etc/logrotate.d/mystic
 
-# Download and install CryptLib library
-
-#OLD METHOD
+# Set temp folder
 WORKDIR /root/cl
 
+# Download pip installs script for Python 2.7
+RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
+RUN python get-pip.py
+
+# Download and install CryptLib library
 RUN wget http://www.mysticbbs.com/downloads/cl3431.zip
 #    unzip -a cl3431.zip && \
 #    make shared && \
