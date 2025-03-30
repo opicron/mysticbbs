@@ -9,10 +9,16 @@ Includes start, stop and boot script for correct signal term handling.
 <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/main.PNG" width="300"> <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/login.PNG" width="300">
 
 30/03/2024:
+- updated to ubuntu 22.04
 - added latest pip version for python 2.7
   - sometimes installs as pip2
 - added get-pip python script to repo
-- added cryptlib archive to repo
+  - added requests
+  - added pyfiglet
+- added cryptlib archives to repo
+  - 3.4.3 for ubuntu 16.04
+  - 3.4.4 for ununtu 20.04
+  - 3.4.5 for ubuntu 22.04
   
 23/03/2024:
 - change from python2.7.18:strech to ubuntu
