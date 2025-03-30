@@ -11,7 +11,7 @@ Includes start, stop and boot script for correct signal term handling.
 30/03/2024:
 - updated to ubuntu 22.04
 - added latest pip version for python 2.7
-  - sometimes installs as pip2
+  - use pip2 command
 - added get-pip python script to repo
   - added requests
   - added pyfiglet
