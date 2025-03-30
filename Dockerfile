@@ -22,6 +22,7 @@ RUN apt install -y \
     dos2unix \
     nano \
     expect \
+    python-pip \
     htop
 
 #    dosemu
