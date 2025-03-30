@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:22.04
 
 # Prevent interactive prompts during build
 ENV DEBIAN_FRONTEND=noninteractive
@@ -22,6 +22,9 @@ RUN apt install -y \
     dos2unix \
     nano \
     expect \
+    python2 \
+    python2-dev \
+    python2-minimal \
     htop
 
 #    dosemu
@@ -31,7 +34,7 @@ RUN apt install -y \
 #    locals \
 
 # add python to env
-RUN apt update && apt install -y python-minimal
+#RUN apt update && apt install -y python-minimal
 RUN apt update && apt install -y libpython2.7 libpython2.7-dev
 
 # add logrotate
@@ -49,25 +52,43 @@ RUN mkdir -p /etc/logrotate.d && \
     echo "    copytruncate" >> /etc/logrotate.d/mystic && \
     echo "}" >> /etc/logrotate.d/mystic
 
+# Clean apt cache
+RUN apt-get clean
+
 # Set temp folder
 WORKDIR /root/cl
 
 # Download pip installs script for Python 2.7
 RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 RUN python2.7 get-pip.py
+RUN pip2 install requests
 
 # Download and install CryptLib library
-RUN wget http://www.mysticbbs.com/downloads/cl3431.zip
-#    unzip -a cl3431.zip && \
-#    make shared && \
-#    mv /root/libcl.so.3.4.3 /lib/libcl.so && \
-#    rm -rf /root/*
+#3.4.3.1 for Ubuntu 16.04
+#RUN wget http://www.mysticbbs.com/downloads/cl3431.zip
+#3.4.4.1 for Ubunutu 20.04
+#RUN wget http://www.mysticbbs.com/downloads/cl3441.zip
+
+#3.4.5 for ubuntu 22.04?
+RUN wget http://www.mysticbbs.com/downloads/cl345.zip
+#This is necessary to compile LC on ubuntu 3.4.5
+RUN apt-get install -y gcc-9 g++-9
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 9
+RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 9
 
 #ADD http://mysticbbs.com/downloads/cl3431.zip /root/cl/
-RUN unzip cl3431.zip
+#RUN unzip -a cl3431.zip
+#RUN unzip -a cl3441.zip
+RUN unzip -a cl345.zip
 RUN dos2unix tools/*.sh
 RUN make shared
-RUN mv libcl.so.3.4.3 /lib/libcl.so
+#RUN mv libcl.so.3.4.3 /lib/libcl.so
+#RUN mv libcl.so.3.4.4 /lib/libcl.so
+RUN mv libcl.so.3.4.5 /lib/libcl.so
+#RUN rm -rf /root/*
+
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 11
+RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 11
 
 # Expose necessary ports
 EXPOSE 23/tcp 22/tcp 24554/tcp
