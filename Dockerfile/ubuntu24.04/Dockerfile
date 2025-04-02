@@ -32,9 +32,12 @@ RUN apt-get update && apt-get install -y \
     libbz2-dev libreadline-dev libsqlite3-dev \
     libncursesw5-dev xz-utils tk-dev libffi-dev
 
+# Install pyenv
+ENV PYENV_ROOT="/root/.pyenv"
+ENV PATH="$PYENV_ROOT/bin:$PATH"
+
 # Install pyenv, set flags for shared library support
 ENV PYTHON_CONFIGURE_OPTS="--enable-shared"
-ENV PYENV_ROOT="/root/.pyenv"
 
 # Clone pyenv and install Python 2.7.18 (into pyenv dir)
 RUN git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT && \
