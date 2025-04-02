@@ -35,11 +35,15 @@ RUN apt-get update && apt-get install -y \
 ENV PYENV_ROOT="/root/.pyenv"
 ENV PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 
-# Install pyenv and Python 2.7.18
-RUN git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT && \
-    $PYENV_ROOT/bin/pyenv install 2.7.18 && \
-    $PYENV_ROOT/bin/pyenv global 2.7.18 && \
-    python2.7 --version
+RUN wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz && \
+    tar xzf Python-2.7.18.tgz && \
+    cd Python-2.7.18 && \
+    ./configure --prefix=/usr/local \
+        --enable-shared \
+        CPPFLAGS="-I/opt/openssl/include" \
+        LDFLAGS="-L/opt/openssl/lib -Wl,-rpath=/usr/local/lib" && \
+    make -j$(nproc) && \
+    make altinstall
 
 # Download pip installs script for Python 2.7
 RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
@@ -95,8 +99,8 @@ RUN make shared
 RUN mv libcl.so.3.4.5 /lib/libcl.so
 #RUN rm -rf /root/*
 
-RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 11
-RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 11
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 13
+RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 13
 
 # Expose necessary ports
 EXPOSE 23/tcp 22/tcp 24554/tcp
