@@ -8,6 +8,12 @@ Includes start, stop and boot script for correct signal term handling.
 
 <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/main.PNG" width="300"> <img src="https://raw.githubusercontent.com/opicron/mysticbbs/master/login.PNG" width="300">
 
+02/04/2024:
+- added ubuntu 24.04 dockerfile
+  - path to python 2.7 lib is /usr/local/lib/libpython2.7.so
+- moved ubunti 22.04 dockerfile
+  - path to python 2.7 lub us /usr/lib/x86_64-linux-gnu/libpython2.7.so
+
 30/03/2024:
 - updated to ubuntu 22.04
 - added latest pip version for python 2.7
