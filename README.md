@@ -10,7 +10,7 @@ Includes start, stop and boot script for correct signal term handling.
 
 02/04/2024:
 - added ubuntu 24.04 dockerfile
-  - path to python 2.7 lib is /usr/local/lib/libpython2.7.so
+  - path to python 2.7 lib is opt/pyenv/versions/2.7.18/lib/libpython2.7.so
 - moved ubuntu 22.04 dockerfile
   - path to python 2.7 lib is /usr/lib/x86_64-linux-gnu/libpython2.7.so
 
