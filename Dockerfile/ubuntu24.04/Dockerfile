@@ -34,10 +34,15 @@ RUN apt-get update && apt-get install -y \
     libbz2-dev libreadline-dev libsqlite3-dev \
     libncursesw5-dev xz-utils tk-dev libffi-dev
 
-# Install pyenv and Python 2.7.18
-RUN git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT && \
-    $PYENV_ROOT/bin/pyenv install 2.7.18 && \
-    $PYENV_ROOT/bin/pyenv global 2.7.18
+# Install Python 2.7.18 from source with shared lib support
+RUN wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tgz && \
+    tar xzf Python-${PYTHON_VERSION}.tgz && \
+    cd Python-${PYTHON_VERSION} && \
+    ./configure --prefix=/usr/local --enable-shared \
+        LDFLAGS="-Wl,-rpath=/usr/local/lib" && \
+    make -j"$(nproc)" && \
+    make altinstall && \
+    cd .. && rm -rf Python-${PYTHON_VERSION}*
 
 # Install pip for Python 2.7 and requests lib
 RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py && \
