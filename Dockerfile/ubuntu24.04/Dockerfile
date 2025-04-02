@@ -33,29 +33,31 @@ RUN apt-get update && apt-get install -y \
     libncursesw5-dev xz-utils tk-dev libffi-dev
 
 # Install pyenv
-ENV PYENV_ROOT="/root/.pyenv"
-ENV PATH="$PYENV_ROOT/bin:$PATH"
+ENV PYENV_ROOT="/opt/pyenv"
+ENV PATH="/opt/pyenv/bin:/opt/pyenv/versions/2.7.18/bin:$PATH"
+ENV PYTHONHOME="/opt/pyenv/versions/2.7.18"
+ENV PYTHONPATH="/opt/pyenv/versions/2.7.18/lib/python2.7"
+
 
 # Install pyenv, set flags for shared library support
 ENV PYTHON_CONFIGURE_OPTS="--enable-shared"
 
-# Clone pyenv and install Python 2.7.18 (into pyenv dir)
-RUN git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT && \
-    $PYENV_ROOT/bin/pyenv install 2.7.18 && \
-    $PYENV_ROOT/bin/pyenv global 2.7.18
+RUN git clone https://github.com/pyenv/pyenv.git /opt/pyenv && \
+    /opt/pyenv/bin/pyenv install 2.7.18 && \
+    /opt/pyenv/bin/pyenv global 2.7.18
 
 RUN cp $PYENV_ROOT/versions/2.7.18/lib/libpython2.7.so* /usr/local/lib/
 RUN echo "/usr/local/lib" > /etc/ld.so.conf.d/python2.7.conf && ldconfig
 
 # Install pip for Python 2.7 and requests lib
 RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
-RUN /root/.pyenv/versions/2.7.18/bin/python get-pip.py && \
-    /root/.pyenv/versions/2.7.18/bin/pip install requests
+RUN python get-pip.py && \
+    pip install requests
 #    python -c "import ssl; print(ssl.OPENSSL_VERSION)" && \
 #    rm get-pip.py
 
 # Test SSL
-RUN /root/.pyenv/versions/2.7.18/bin/python -c "import ssl; print(ssl.OPENSSL_VERSION)"
+#RUN /root/.pyenv/versions/2.7.18/bin/python -c "import ssl; print(ssl.OPENSSL_VERSION)"
 
 
 # add logrotate
@@ -86,7 +88,6 @@ RUN wget http://www.mysticbbs.com/downloads/cl345.zip
 RUN apt-get install -y gcc-9 g++-9
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 9
 RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 9
-
 #ADD http://mysticbbs.com/downloads/cl3431.zip /root/cl/
 RUN unzip -a cl345.zip
 RUN dos2unix tools/*.sh
@@ -103,3 +104,5 @@ EXPOSE 23/tcp 22/tcp 24554/tcp
 WORKDIR /mystic
 #CMD ["/mystic/boot.sh", "override"]
 CMD ["/mystic/boot.sh", "mystic"]
+# For debugging purposes (allows you to enter the container)
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
