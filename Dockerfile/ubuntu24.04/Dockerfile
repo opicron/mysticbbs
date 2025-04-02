@@ -2,8 +2,6 @@ FROM ubuntu:24.04
 
 # Prevent interactive prompts during build
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PYENV_ROOT="/root/.pyenv"
-ENV PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 
 MAINTAINER opicron <opicron@gmail.com>
 
@@ -34,10 +32,13 @@ RUN apt-get update && apt-get install -y \
     libbz2-dev libreadline-dev libsqlite3-dev \
     libncursesw5-dev xz-utils tk-dev libffi-dev
 
-# Install pyenv and Python 2.7.18
+# Install pyenv, set flags for shared library support
+ENV PYTHON_CONFIGURE_OPTS="--enable-shared"
+
+# Clone pyenv and install Python 2.7.18 (into pyenv dir)
 RUN git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT && \
     $PYENV_ROOT/bin/pyenv install 2.7.18 && \
-    $PYENV_ROOT/bin/pyenv global 2.7.18
+    $PYENV_ROOT/bin/pyenv global 2.7.18 &&
 
 RUN cp $PYENV_ROOT/versions/2.7.18/lib/libpython2.7.so* /usr/local/lib/
 RUN echo "/usr/local/lib" > /etc/ld.so.conf.d/python2.7.conf && ldconfig
