@@ -34,24 +34,25 @@ RUN apt-get update && apt-get install -y \
 
 # Install pyenv, set flags for shared library support
 ENV PYTHON_CONFIGURE_OPTS="--enable-shared"
+ENV PYENV_ROOT="/root/.pyenv"
 
 # Clone pyenv and install Python 2.7.18 (into pyenv dir)
 RUN git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT && \
     $PYENV_ROOT/bin/pyenv install 2.7.18 && \
-    $PYENV_ROOT/bin/pyenv global 2.7.18 &&
+    $PYENV_ROOT/bin/pyenv global 2.7.18
 
 RUN cp $PYENV_ROOT/versions/2.7.18/lib/libpython2.7.so* /usr/local/lib/
 RUN echo "/usr/local/lib" > /etc/ld.so.conf.d/python2.7.conf && ldconfig
 
 # Install pip for Python 2.7 and requests lib
-RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py && \
-    python get-pip.py && \
-    pip install requests && \
-    python -c "import ssl; print(ssl.OPENSSL_VERSION)" && \
-    rm get-pip.py
+RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+RUN /root/.pyenv/versions/2.7.18/bin/python get-pip.py && \
+    /root/.pyenv/versions/2.7.18/bin/pip install requests
+#    python -c "import ssl; print(ssl.OPENSSL_VERSION)" && \
+#    rm get-pip.py
 
 # Test SSL
-RUN python2.7 -c "import ssl; print(ssl.OPENSSL_VERSION)"
+RUN /root/.pyenv/versions/2.7.18/bin/python -c "import ssl; print(ssl.OPENSSL_VERSION)"
 
 
 # add logrotate
