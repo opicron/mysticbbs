@@ -51,8 +51,11 @@ RUN echo "/usr/local/lib" > /etc/ld.so.conf.d/python2.7.conf && ldconfig
 
 # Install pip for Python 2.7 and requests lib
 RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
-RUN python get-pip.py && \
-    pip install requests
+RUN python get-pip.py
+
+RUN pip2 install requests
+RUN pip2 install pyfiglet
+RUN pip2 install pillow
 #    python -c "import ssl; print(ssl.OPENSSL_VERSION)" && \
 #    rm get-pip.py
 
