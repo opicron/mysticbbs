@@ -13,6 +13,7 @@ RUN apt install -y \
     cron \
     unzip \
     unrar \
+    arj \
     zip \
     rar \
     mc \
