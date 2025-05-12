@@ -65,6 +65,7 @@ RUN python2.7 get-pip.py
 RUN pip2 install requests
 RUN pip2 install pyfiglet
 RUN pip2 install pillow
+RUN pip2 install openai
 
 # Download and install CryptLib library
 #3.4.3.1 for Ubuntu 16.04
