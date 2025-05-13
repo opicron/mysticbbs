@@ -26,7 +26,7 @@ RUN apt install -y \
     python2 \
     python2-dev \
     python2-minimal \
-    atools \
+    atool \
     htop
 
 #    dosemu
