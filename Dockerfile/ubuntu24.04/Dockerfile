@@ -24,6 +24,7 @@ RUN apt install -y \
     expect \
     make \
     git \
+    atool \
     htop
 
 # Install deps for python
@@ -56,7 +57,7 @@ RUN python get-pip.py
 RUN pip2 install requests
 RUN pip2 install pyfiglet
 RUN pip2 install pillow
-RUN pip2 install openai
+#RUN pip2 install openai
 
 #    python -c "import ssl; print(ssl.OPENSSL_VERSION)" && \
 #    rm get-pip.py
