@@ -104,7 +104,7 @@ RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 13
 RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 13
 
 # Expose necessary ports
-EXPOSE 23/tcp 22/tcp 24554/tcp
+EXPOSE 23/tcp 22/tcp 24554/tcp 8888/tcp
 
 #default command, can be overridden
 WORKDIR /mystic
